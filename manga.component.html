@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-stripped" >
+                <tr><th>Nom Manga</th><th>Mangaka</th><th>Prix</th><th>Date de creation</th></tr>
+                <tbody>
+                    <tr *ngFor="let manga of mangas">
+                        <td>{{manga.nomManga}}</td>
+                        <td>{{manga.mangakaManga}}</td>
+                        <td>{{manga.salaireManga}}</td>
+                        <td>{{manga.dateCreation | date:'dd/MM/yyyy'}}</td>
+                        <td><a class="btn btn-danger" (click)="supprimerManga(manga)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateManga', manga.nomManga]">Modifier</a></td>
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</div>
